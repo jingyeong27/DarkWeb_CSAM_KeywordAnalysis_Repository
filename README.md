@@ -39,10 +39,6 @@ The repository contains the following non-sensitive, derived materials:
   These raw datasets **cannot be shared** due to legal and ethical restrictions.  
 - The files provided here are **derived, filtered, and fully sanitized** to ensure that  
   **no illegal or harmful material** is present.
-- This approach complies with:
-  - PLOS ONE’s [Data Availability Policy](https://journals.plos.org/plosone/s/data-availability)
-  - The **Act on the Protection of Children and Juveniles from Sexual Abuse (South Korea)**
-  - International child protection and ethical research standards
 
 ---
 
