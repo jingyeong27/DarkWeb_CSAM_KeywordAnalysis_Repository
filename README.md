@@ -14,18 +14,23 @@ with ethical and legal standards.
 ## Contents
 The repository contains the following non-sensitive, derived materials:
 
+- **`Top 20 Keywords Extracted Using TF-IDF.csv`**  
+  Top 20 keywords ranked by TF-IDF scores.
 
-### • `keyword_rankings/`
-Contains ranked keyword lists extracted from three independent models: TF-IDF, Eigenvector Centrality, and Word2Vec.
+- **`Top 20 Keywords Extracted Using Eigenvector Centrality.csv`**  
+  Top 20 keywords ranked by eigenvector centrality in the co-occurrence network.
 
-### • `frequency_distributions/`
-Includes statistical term frequency results used for model validation and keyword weighting.
+- **`Top 20 Keywords Extracted Using Word2Vec.csv`**  
+  Top 20 keywords derived from the Word2Vec model.
 
-### • `cooccurrence_network/`
-Provides anonymized network edge data representing co-occurrence relationships between non-sensitive terms.
+- **`word frequency distribution.csv`**  
+  Word frequency distribution used for analysis and model validation.
 
-### • `word2vec_embeddings/`
-Contains trained Word2Vec vector representations derived from cleaned, non-illicit text data.
+- **`cooccurrence_network.pkl`**  
+  Pickled NetworkX graph of the anonymized term co-occurrence network (nodes: terms, edges: co-occurrences).
+
+- **`word2vec_embeddings.csv`**  
+  Word2Vec embedding vectors for non-sensitive terms (first column: token, remaining columns: embedding dimensions).
 
 ---
 
