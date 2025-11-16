@@ -35,12 +35,6 @@ The repository contains the following non-sensitive, derived materials:
 ---
 
 ## Ethical Compliance
-- All raw dark web text data originally used in this study contained CSAM-related materials.  
-  These raw datasets **cannot be shared** due to legal and ethical restrictions.  
-- The files provided here are **derived, filtered, and fully sanitized** to ensure that  
-  **no illegal or harmful material** is present.
+The original dark web text data used in this study contained materials related to child sexual abuse (CSAM); therefore, the raw data cannot be disclosed due to legal and ethical restrictions.
 
-
-> ⚠️ **Disclaimer:**  
-> This repository does **not** contain any illegal, harmful, or explicit material.  
-> All data are non-sensitive and intended solely for academic reproducibility and verification.
+All files in this repository are derived, filtered, and sanitized datasets, and while some potentially sensitive content may remain in minimal form, they are provided solely for academic reproducibility and verification purposes.
