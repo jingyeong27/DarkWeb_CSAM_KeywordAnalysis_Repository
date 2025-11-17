@@ -28,30 +28,36 @@ The repository contains the following **non-sensitive, derived datasets**:
 
 ### 2. Analysis Code
 
-This repository also includes the **analysis code** used to implement the methods described in the manuscript:
+This repository also includes the **analysis code** used to implement the methods described in the manuscript.
 
-- **`tfidf_extraction.py`**  
-  Implementation of TF–IDF–based keyword extraction.
+#### (1) Single-model implementations
 
-- **`eigenvector_centrality.py`**  
-  Construction of the co-occurrence network and computation of eigenvector centrality.
+- **`TF-IDF.py`**  
+  TF–IDF–based keyword extraction and ranking.
 
-- **`word2vec_extraction.py`**  
-  Training of the Word2Vec model and computation of semantic similarity scores.
+- **`Eigenvector.py`**  
+  Construction of the term co-occurrence network and computation of eigenvector centrality.
 
-- **`hybrid_model.py`**  
-  Implementation of the **proposed hybrid model** that combines:
-  - eigenvector centrality (structural centrality),
-  - TF–IDF–based statistical rarity, and
-  - Word2Vec–based semantic similarity  
-  to improve investigative keyword precision and contextual relevance.
+- **`Word2Vec.py`**  
+  Training of the Word2Vec model and computation of semantic similarity between terms.
 
-- **`visualization.py`**  
-  Utility functions for visualizing term–term and keyword–term relationships  
-  (e.g., NetworkX / Pyvis–based visualizations).
+#### (2) Hybrid (combined) models
+
+- **`combined_1.py`**  
+  Hybrid model that combines eigenvector centrality with TF–IDF keywords that do not appear in the eigenvector set.
+
+- **`combined_2.py`**  
+  Hybrid model that combines eigenvector centrality with the full TF–IDF vocabulary (eigen + non-eigen terms).
+
+- **`combined_3.py`**  
+  Hybrid model that combines eigenvector centrality with Word2Vec-only keywords to expand structurally central terms using semantic similarity.
+
+- **`combined_4.py`**  
+  Extended hybrid model that iteratively uses eigenvector-based center keywords and Word2Vec neighbors  
+  to discover additional CSAM-related keyword pairs and compute final combined scores.
 
 All scripts are implemented in **Python 3.10+** and rely on open-source libraries such as  
-`gensim`, `networkx`, `scikit-learn`, and `pandas`.  
+`pandas`, `scikit-learn`, `gensim`, and `networkx`.  
 They are shared to promote **reproducibility, transparency, and independent validation** of the study.
 
 ---
@@ -72,4 +78,3 @@ Researchers who wish to replicate the study are expected to:
   institutional review procedures, relevant laws, and ethical guidelines, and  
 - apply the data collection, preprocessing, and analysis pipeline described in the manuscript  
   using the code and derived resources published in this repository.
-
