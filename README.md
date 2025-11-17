@@ -1,50 +1,75 @@
-Derived Non-Sensitive Dataset and Analysis Code for
+## Contents
 
-“Hybrid Text Mining Models for Expanding Investigative Clues on Child Sexual Abuse in the Dark Web”
+### 1. Data Files
 
-Overview
+The repository contains the following **non-sensitive, derived datasets**:
 
-This repository provides derived, non-sensitive datasets and analysis codes supporting the manuscript
-“Hybrid Text Mining Models for Expanding Investigative Clues on Child Sexual Abuse in the Dark Web” (PLOS ONE submission).
+- **`Top 20 Keywords Extracted Using TF-IDF.csv`**  
+  Top 20 keywords ranked by TF–IDF scores.
 
-All harmful or illegal content (e.g., CSAM-related text or URLs) has been completely removed.
-Only anonymized, aggregated, and ethically compliant data and code are shared to ensure legal and research integrity.
+- **`Top 20 Keywords Extracted Using Eigenvector Centrality.csv`**  
+  Top 20 keywords ranked by eigenvector centrality in the term co-occurrence network.
 
-Contents
-🧾 Data Files
+- **`Top 20 Keywords Extracted Using Word2Vec.csv`**  
+  Top 20 keywords derived from the Word2Vec model.
 
-Top 20 Keywords Extracted Using TF-IDF.csv – Top 20 keywords ranked by TF-IDF scores.
+- **`word frequency distribution.csv`**  
+  Word frequency distribution used for analysis and model validation.
 
-Top 20 Keywords Extracted Using Eigenvector Centrality.csv – Top 20 keywords ranked by eigenvector centrality in the co-occurrence network.
+- **`cooccurrence_network.pkl`**  
+  Pickled NetworkX graph of the anonymized term co-occurrence network  
+  (nodes: terms, edges: co-occurrence relationships).
 
-Top 20 Keywords Extracted Using Word2Vec.csv – Top 20 keywords derived from the Word2Vec model.
+- **`word2vec_embeddings.csv`**  
+  Word2Vec embedding vectors for non-sensitive terms  
+  (first column: token, remaining columns: embedding dimensions).
 
-word frequency distribution.csv – Word frequency distribution used for analysis and model validation.
+---
 
-cooccurrence_network.pkl – Pickled NetworkX graph of the anonymized term co-occurrence network (nodes: terms, edges: co-occurrences).
+### 2. Analysis Code
 
-word2vec_embeddings.csv – Word2Vec embedding vectors for non-sensitive terms (first column: token, remaining columns: embedding dimensions).
+This repository also includes the **analysis code** used to implement the methods described in the manuscript:
 
-💻 Analysis Code
+- **`tfidf_extraction.py`**  
+  Implementation of TF–IDF–based keyword extraction.
 
-This repository also includes the source code used for the analytical experiments described in the manuscript:
+- **`eigenvector_centrality.py`**  
+  Construction of the co-occurrence network and computation of eigenvector centrality.
 
-tfidf_extraction.py – Implementation of TF–IDF-based keyword extraction.
+- **`word2vec_extraction.py`**  
+  Training of the Word2Vec model and computation of semantic similarity scores.
 
-eigenvector_centrality.py – Co-occurrence network construction and eigenvector centrality computation.
+- **`hybrid_model.py`**  
+  Implementation of the **proposed hybrid model** that combines:
+  - eigenvector centrality (structural centrality),
+  - TF–IDF–based statistical rarity, and
+  - Word2Vec–based semantic similarity  
+  to improve investigative keyword precision and contextual relevance.
 
-word2vec_extraction.py – Word2Vec model training and keyword similarity scoring.
+- **`visualization.py`**  
+  Utility functions for visualizing term–term and keyword–term relationships  
+  (e.g., NetworkX / Pyvis–based visualizations).
 
-hybrid_model.py – Proposed hybrid model combining eigenvector centrality with TF–IDF and Word2Vec to enhance investigative keyword precision and contextual relevance.
+All scripts are implemented in **Python 3.10+** and rely on open-source libraries such as  
+`gensim`, `networkx`, `scikit-learn`, and `pandas`.  
+They are shared to promote **reproducibility, transparency, and independent validation** of the study.
 
-visualization.py – Network visualization utilities for keyword–term relations (using Pyvis or NetworkX).
+---
 
-All codes were developed in Python (v3.10+), relying on open libraries such as gensim, networkx, and scikit-learn.
-They are shared for academic reproducibility, transparency, and independent validation.
+## Ethical Compliance
 
-Ethical Compliance
+The original dark web text data used in this study contained materials related to child sexual abuse (CSAM);  
+therefore, the **raw corpus (including original text and URLs) cannot be disclosed** due to legal and ethical restrictions.
 
-The original dark web text data used in this study contained materials related to child sexual abuse (CSAM);
-therefore, the raw corpus is not disclosed due to legal and ethical restrictions.
-All datasets and codes provided here are fully sanitized and intended for academic replication only.
-Researchers reproducing this work must ensure compliance with their own institutional ethical review processes.
+All files in this repository are **derived, filtered, and fully sanitized**.  
+While certain terms may still be related to crime contexts at a lexical level,  
+no directly harmful, explicit, or operationally actionable content is included.  
+The datasets and code are provided **solely for academic reproducibility and verification purposes**.
+
+Researchers who wish to replicate the study are expected to:
+
+- obtain and process their own datasets in accordance with
+  institutional review procedures, relevant laws, and ethical guidelines, and  
+- apply the data collection, preprocessing, and analysis pipeline described in the manuscript  
+  using the code and derived resources published in this repository.
+
