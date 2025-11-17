@@ -44,17 +44,16 @@ This repository also includes the **analysis code** used to implement the method
 #### (2) Hybrid (combined) models
 
 - **`combined_1.py`**  
-  Hybrid model that combines eigenvector centrality with TF–IDF keywords that do not appear in the eigenvector set.
+  Hybrid model that combines eigenvector-central keywords with TF–IDF-only keywords (TF–IDF terms that do not appear in the eigenvector centrality set).
 
 - **`combined_2.py`**  
-  Hybrid model that combines eigenvector centrality with the full TF–IDF vocabulary (eigen + non-eigen terms).
+  Hybrid model that combines eigenvector-central keywords with the full TF–IDF vocabulary, including both eigenvector and non-eigenvector terms.
 
 - **`combined_3.py`**  
-  Hybrid model that combines eigenvector centrality with Word2Vec-only keywords to expand structurally central terms using semantic similarity.
+  Hybrid model that combines eigenvector-central keywords with Word2Vec-only keywords (semantically similar terms that are not in the eigenvector set).
 
 - **`combined_4.py`**  
-  Extended hybrid model that iteratively uses eigenvector-based center keywords and Word2Vec neighbors  
-  to discover additional CSAM-related keyword pairs and compute final combined scores.
+  Extended hybrid model that iteratively uses eigenvector-central keywords as center terms, retrieves their Word2Vec neighbors, and then reuses those neighbors as new centers.
 
 All scripts are implemented in **Python 3.10+** and rely on open-source libraries such as  
 `pandas`, `scikit-learn`, `gensim`, and `networkx`.  
